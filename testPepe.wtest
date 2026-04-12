@@ -1,20 +1,56 @@
-import pepe.*
-import bonos.*
-import categorias.*
+import pepepropio.*
+
 
 describe "sueldo pepe" {
-	test "Test inicial 1" {
-		/* esta parte está comentada porque falta agregar los métodos
-		 * correspondientes en el objeto pepe. 
-		 * Descomentar las cuatro líneas que siguen para que el test funcione correctamente. 
-		 */
-//		pepe.setCategoria(cadete)
-//		pepe.setBonoResultado(bonoMontoFijo)
-//		pepe.setBonoPresentismo(bonoPresentismoNormal)
-//		pepe.setCantidadDeFaltas(3)
+	test "Test inicial 1" {   
+		pepe.setCategoria(cadete)
+		pepe.setBonoResultado(bonoMontoFijo)
+		pepe.setBonoPresentismo(bonoPresentismoNormal)
+		pepe.setCantidadDeFaltas(3)
 		
 		assert.equals(20000 + 800 + 0, pepe.sueldo())
 	}
+}
+describe "sueldo pepe2" {
+	test "Test inicial 2" {   
+		pepe.setCategoria(gerente)
+		pepe.setBonoResultado(bonoPorcentual)
+		pepe.setBonoPresentismo(bonoPresentismoNulo)
+		pepe.setCantidadDeFaltas(1)
+		
+		assert.equals(15000 + 1500 + 0, pepe.sueldo())
+	}
+}
+describe "sueldo pepe3" {
+	test "Test inicial 3" {   
+		pepe.setCategoria(cadete)
+		pepe.setBonoResultado(bonoPorcentual)
+		pepe.setBonoPresentismo(bonoPresentismoNormal)
+		pepe.setCantidadDeFaltas(0)
+		
+		assert.equals(20000 + 2000 + 2000, pepe.sueldo())
+	}
+}
 
-	
+describe "sueldo pepe4" {
+	test "Test inicial 4" {   
+		pepe.setCategoria(cadete)
+		pepe.setBonoResultado(bonoPorcentual)
+		pepe.setBonoPresentismo(bonoPresentismoNormal)
+		pepe.setCantidadDeFaltas(1)
+		
+		assert.equals(20000 + 2000 + 1000, pepe.sueldo())
+	}
+}
+
+describe "sueldo pepe5" {
+	test "Test inicial 4" {
+		medioTiempo.categoriaBase(cadete)   
+		pepe.setCategoria(medioTiempo)
+		pepe.setBonoResultado(bonoPorcentual)
+		pepe.setBonoPresentismo(bonoPresentismoDemagogico)
+		pepe.setCantidadDeFaltas(1)
+		
+		assert.equals(10000 + 1000 + 500, pepe.sueldo())
+	}
 }
